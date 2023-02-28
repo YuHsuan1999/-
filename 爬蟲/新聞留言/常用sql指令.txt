@@ -1,0 +1,7 @@
+刪掉同一則留言
+delete from comments
+where No in (
+select c1.No
+from conmments as c1, comments as c2
+where c1.comment = c2.comment and c1.No <> c2.No)
+
